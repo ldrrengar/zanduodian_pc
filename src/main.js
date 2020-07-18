@@ -25,7 +25,7 @@ Vue.component('tree-table', treeTable)
 // 设置请求根路径
 // axios.defaults.baseURL = 'https://www.liulongbin.top:8888/api/private/v1/'
 // axios.defaults.baseURL = 'http://localhost:8080'
-axios.defaults.baseURL = 'http://39.108.145.250:8082'
+// axios.defaults.baseURL = 'http://39.108.145.250:8082'
 // 配置axios
 Vue.prototype.$http = axios
 

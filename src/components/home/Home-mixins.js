@@ -4,7 +4,7 @@ export default {
       // 所有菜单项
       menus: [],
       collapse: false,
-      iconlist: ['icon-users', 'icon-tijikongjian', 'icon-shangpin', 'icon-danju', 'icon-baobiao'],
+      iconlist: ['icon-users', 'icon-tijikongjian', 'icon-shangpin', 'icon-danju', 'icon-baobiao', 'icon-users', 'icon-tijikongjian', 'icon-shangpin', 'icon-danju', 'icon-baobiao'],
       // 被激活的菜单的path
       activePath: ''
     }
@@ -63,6 +63,24 @@ export default {
           {
             authName: '会员统计',
             path: 'memberStatistics'
+          }
+        ]
+      },
+      {
+        authName: '任务数据',
+        id: 5,
+        children: [
+          {
+            authName: '总任务数量',
+            path: 'totalTask'
+          },
+          {
+            authName: '已完成任务',
+            path: 'finishTask'
+          },
+          {
+            authName: '今日已做任务',
+            path: 'toDayFinish'
           }
         ]
       }

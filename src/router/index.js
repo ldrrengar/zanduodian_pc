@@ -32,6 +32,12 @@ import withDrawal from '@/views/withDrawal/withDrawal'
 import userStatistics from '@/views/member/userStatistics'
 // 导入 会员统计
 import memberStatistics from '@/views/member/memberStatistics'
+// 导入 任务总量
+import totalTask from '@/views/task/totalTask'
+// 导入 已完成
+import finishTask from '@/views/task/finishTask'
+// 导入 今日已做
+import toDayFinish from '@/views/task/toDayFinish'
 
 Vue.use(Router)
 
@@ -57,7 +63,10 @@ const router = new Router({
         { path: '/task', component: task },
         { path: '/withDrawal', component: withDrawal },
         { path: '/memberStatistics', component: memberStatistics },
-        { path: '/userStatistics', component: userStatistics }
+        { path: '/userStatistics', component: userStatistics },
+        { path: '/totalTask', component: totalTask },
+        { path: '/finishTask', component: finishTask },
+        { path: '/toDayFinish', component: toDayFinish }
       ]
     }
   ]
@@ -68,7 +77,7 @@ router.beforeEach((to, from, next) => {
   // 如果用户访问的登录页，直接放行
   if (to.path === '/login') return next()
   // 从 sessionStorage 中获取到 保存的 token 值
-  window.sessionStorage.setItem('token', 'token')
+  // window.sessionStorage.setItem('token', 'token')
   const tokenStr = window.sessionStorage.getItem('token')
   // 没有token，强制跳转到登录页
   if (!tokenStr) return next('/login')
