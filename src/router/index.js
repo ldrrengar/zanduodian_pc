@@ -38,6 +38,14 @@ import totalTask from '@/views/task/totalTask'
 import finishTask from '@/views/task/finishTask'
 // 导入 今日已做
 import toDayFinish from '@/views/task/toDayFinish'
+// 导入 资金明细
+import fundManage from '@/views/fundManage/fundManage'
+// 导入 发布任务充值
+import taskFund from '@/views/fundManage/taskFund'
+// 导入 会员充值
+import getMember from '@/views/fundManage/getMember'
+// 导入 提现
+import getMoney from '@/views/fundManage/getMoney'
 
 Vue.use(Router)
 
@@ -66,7 +74,11 @@ const router = new Router({
         { path: '/userStatistics', component: userStatistics },
         { path: '/totalTask', component: totalTask },
         { path: '/finishTask', component: finishTask },
-        { path: '/toDayFinish', component: toDayFinish }
+        { path: '/toDayFinish', component: toDayFinish },
+        { path: '/fundManage', component: fundManage },
+        { path: '/taskFund', component: taskFund },
+        { path: '/getMember', component: getMember },
+        { path: '/getMoney', component: getMoney }
       ]
     }
   ]

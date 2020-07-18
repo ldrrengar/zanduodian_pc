@@ -83,6 +83,24 @@ export default {
             path: 'toDayFinish'
           }
         ]
+      },
+      {
+        authName: '资金统计',
+        id: 6,
+        children: [
+          {
+            authName: '资金明细',
+            path: 'fundManage'
+          },
+          // {
+          //   authName: '已完成任务',
+          //   path: 'finishTask'
+          // },
+          // {
+          //   authName: '今日已做任务',
+          //   path: 'toDayFinish'
+          // }
+        ]
       }
     ]
     // 只要刷新浏览器，Home组件就会被重新创建一次，data中数据数据会被清空
