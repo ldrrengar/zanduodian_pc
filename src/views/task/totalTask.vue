@@ -25,8 +25,6 @@
                   <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="费用总计"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="状态"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="任务类型"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="发布人昵称"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="发布人账号"></el-table-column>
                 </el-table>
                 <!-- 分页表格 -->
                 <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage"
@@ -48,8 +46,6 @@
                   <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="费用总计"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="状态"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="任务类型"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="发布人昵称"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="发布人账号"></el-table-column>
                 </el-table>
                 <!-- 分页表格 -->
                 <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage1"
