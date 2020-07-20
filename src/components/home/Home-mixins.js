@@ -71,16 +71,16 @@ export default {
         id: 5,
         children: [
           {
-            authName: '总任务数量',
+            authName: '任务信息',
             path: 'totalTask'
-          },
-          {
-            authName: '已完成任务',
-            path: 'finishTask'
-          },
-          {
-            authName: '今日已做任务',
-            path: 'toDayFinish'
+          // },
+          // {
+          //   authName: '已完成任务',
+          //   path: 'finishTask'
+          // },
+          // {
+          //   authName: '今日已做任务',
+          //   path: 'toDayFinish'
           }
         ]
       },

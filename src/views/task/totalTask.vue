@@ -3,7 +3,7 @@
     <div slot="header" class="clearfix">
       <span>
         <i class="el-icon-position"></i>
-         任务总量统计
+         任务信息统计
       </span>
     </div>
     <div class="text item">
@@ -14,19 +14,19 @@
               <div class="el-flex el-box-column ">
                 <el-table :data="tableData" ref="tableData" style="width: 100%;" border stripe>
                   <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="编号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="member_level_name" label="要求">
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="任务编号"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="视频链接"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="member_level_name" label="目标次数">
                   </el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="money" label="总条数"></el-table-column>
-
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="money" label="剩余条数"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="center" label="任务金额"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="发布金额"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="发布日期"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="是否会员"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="是否完成"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="发布人昵称"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="发布人账号"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="money" label="已完成次数"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="money" label="任务要求"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="center" label="发布任务价格"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="单条完成价格"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="费用总计"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="状态"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="任务类型"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="发布人昵称"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="发布人账号"></el-table-column>
                 </el-table>
                 <!-- 分页表格 -->
                 <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage"
@@ -34,21 +34,22 @@
               </div>
             </el-tab-pane>
             <el-tab-pane :label="totalNum2" name="second" class="el-card-flex">
-              <div class="el-flex el-box-column ">
+              <div class="el-flex el-box-column">
                 <el-table :data="tableData1" ref="tableData1" style="width: 100%;" border stripe>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="编号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="member_level_name" label="要求">
+                  <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="任务编号"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="视频链接"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="member_level_name" label="目标次数">
                   </el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="money" label="总条数"></el-table-column>
-
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="money" label="剩余条数"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="center" label="任务金额"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="发布金额"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="发布日期"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="是否会员"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="是否完成"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="发布人昵称"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="发布人账号"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="money" label="已完成次数"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="money" label="任务要求"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="center" label="发布任务价格"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="单条完成价格"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="费用总计"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="状态"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="任务类型"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="发布人昵称"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="发布人账号"></el-table-column>
                 </el-table>
                 <!-- 分页表格 -->
                 <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage1"
