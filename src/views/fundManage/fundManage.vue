@@ -12,23 +12,23 @@
           <div class="el-flex el-box-column ">
             <el-table :data="tableData" ref="tableData" style="width: 100%;" border stripe>
               <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="value1" label="资金明细"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="value2" label="发布任务充值">
+              <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="name" label="资金明细"></el-table-column>
+              <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="task" label="发布任务充值">
                 <template  slot-scope="scope">
-                  <div @click="nextPage(1, scope.row.value0)" style="color: #0b82e9; cursor: pointer;">{{ scope.row.value2 }}</div>
+                  <div @click="nextPage(1, scope.row.name)" style="color: #0b82e9; cursor: pointer;">{{ scope.row.task }}</div>
                 </template>
               </el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="value3" label="会员充值">
+              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="member" label="会员充值">
                 <template  slot-scope="scope">
-                  <div @click="nextPage(2, scope.row.value0)" style="color: #0b82e9; cursor: pointer;">{{ scope.row.value2 }}</div>
+                  <div @click="nextPage(2, scope.row.name)" style="color: #0b82e9; cursor: pointer;">{{ scope.row.member }}</div>
                 </template>
               </el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="value4" label="套餐提成"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="value5" label="任务奖励"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="value6" label="团队收益"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="120"  prop="value7" align="center" label="提现">
+              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="commission" label="套餐提成"></el-table-column>
+              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="task_reward" label="任务奖励"></el-table-column>
+              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="team_income" label="团队收益"></el-table-column>
+              <el-table-column show-overflow-tooltip sortable min-width="120"  prop="momey_record" align="center" label="提现">
                 <template  slot-scope="scope">
-                  <div @click="nextPage(3, scope.row.value0)" style="color: #0b82e9; cursor: pointer;">{{ scope.row.value2 }}</div>
+                  <div @click="nextPage(3, scope.row.name)" style="color: #0b82e9; cursor: pointer;">{{ scope.row.momey_record }}</div>
                 </template>
               </el-table-column>
             </el-table>
@@ -92,38 +92,10 @@ export default {
   methods: {
     // 总用户数获取事件
     getLists() {
-      this.tableData = [
-        {
-          value0: 'day',
-          value1: '今日',
-          value2: '15',
-          value3: '20',
-          value4: '80',
-          value5: '11',
-          value6: '23',
-          value7: '33'
-        },
-        {
-          value0: 'month',
-          value1: '本月',
-          value2: '15',
-          value3: '20',
-          value4: '80',
-          value5: '11',
-          value6: '23',
-          value7: '33'
-        },
-        {
-          value0: 'total',
-          value1: '总金额',
-          value2: '15',
-          value3: '20',
-          value4: '80',
-          value5: '11',
-          value6: '23',
-          value7: '33'
-        }
-      ]
+      this.$http.get('/api/fund_manage/').then(res => {
+        console.log(res)
+        this.tableData = res.data[0]['fund_data']
+      })
     },
     nextPage(type, val) {
       if (type === 1) {

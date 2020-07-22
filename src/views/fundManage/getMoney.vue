@@ -10,14 +10,14 @@
       <el-container style="overflow: hidden;">
         <el-main class="el-box">
           <div class="el-flex el-box-column ">
-            <el-table :data="tableData" ref="tableData" style="width: 100%;" border stripe>
+            <el-table :data="tableData" ref="tableData" style="width: 100%; overflow: auto;" border stripe>
               <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="value2" label="账号">
+              <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="ZFB_account" label="账户">
               </el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="value3" label="昵称"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="value5" label="提现金额"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="value4" label="提现时间"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="value4" label="是否完成提现"></el-table-column>
+              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="ZFB_name" label="账户名"></el-table-column>
+              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="money" label="提现金额"></el-table-column>
+              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="add_time" label="提现时间"></el-table-column>
+              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="state" label="提现状态"></el-table-column>
             </el-table>
             <!-- 分页表格 -->
             <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage"
@@ -79,11 +79,11 @@ export default {
   methods: {
     // 总用户数获取事件
     getLists() {
-      let data = {
-        type: this.$router.query.fundType,
-        page: this.currentPage,
-        size: this.pageSize
-      }
+      this.$http.get('/api/money_record_look/?page='+ this.currentPage + '&page_size=' + this.pageSize + '&type=' + this.$route.query.fundType).then(res => {
+        console.log(res)
+        this.tableData = res.data.results
+        this.total = res.data.count
+      })
     },
     // 总 每页条数
     handleSizeChange(val) {

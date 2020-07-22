@@ -11,19 +11,19 @@
         <el-main class="el-box">
           <el-tabs v-model="activeName" @tab-click="handleClick" class="el-tabs-bg el-flex el-tabs-flex approveTabs">
             <el-tab-pane :label="totalNum1" name="first" class="el-card-flex">
-              <div class="el-flex el-box-column ">
+              <div class="el-flex el-box-column " style="overflow: auto">
                 <el-table :data="tableData" ref="tableData" style="width: 100%;" border stripe>
                   <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="账号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="member_level_name" label="昵称">
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="username" label="账号"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="name" label="昵称">
                   </el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="money" label="会员等级"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="center" label="任务奖励"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="套餐提成"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="团队收益"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="今日收益"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="提现"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="账户余额"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="member_level" label="会员等级"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="task_reward" align="center" label="任务奖励"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="commission" label="套餐提成"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="team_income" label="团队收益"></el-table-column>
+<!--                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="今日收益"></el-table-column>-->
+<!--                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="提现"></el-table-column>-->
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="balance" label="账户余额"></el-table-column>
                 </el-table>
                 <!-- 分页表格 -->
                 <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage"
@@ -34,16 +34,16 @@
               <div class="el-flex el-box-column ">
                 <el-table :data="tableData1" ref="tableData1" style="width: 100%;" border stripe>
                   <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="账号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="member_level_name" label="昵称">
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="username" label="账号"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="name" label="昵称">
                   </el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="money" label="会员等级"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="center" label="任务奖励"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="套餐提成"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="团队收益"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="今日收益"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="提现"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="账户余额"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="member_level" label="会员等级"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="task_reward" align="center" label="任务奖励"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="commission" label="套餐提成"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="team_income" label="团队收益"></el-table-column>
+                  <!--                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="今日收益"></el-table-column>-->
+                  <!--                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="提现"></el-table-column>-->
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="balance" label="账户余额"></el-table-column>
                 </el-table>
                 <!-- 分页表格 -->
                 <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage1"
@@ -103,8 +103,8 @@ export default {
       formLabelWidth: '120px',
       isPass: false,
       rowData: '',
-      totalAccount: '11',
-      toDayAccount: '12',
+      totalAccount: '',
+      toDayAccount: '',
       totalNum1: '',
       totalNum2: ''
     }
@@ -112,15 +112,27 @@ export default {
   created() {
     this.getLists()
     this.getLists1()
-    this.totalNum1 = '总用户数量: ' + this.totalAccount
-    this.totalNum2 = '今日用户数量: ' + this.toDayAccount
+    // this.totalNum1 = '总用户数量: ' + this.totalAccount
+    // this.totalNum2 = '今日用户数量: ' + this.toDayAccount
   },
   methods: {
     // 总用户数获取事件
     getLists() {
+      this.$http.get('/api/user/?page='+ this.currentPage + '&page_size=' + this.pageSize).then(res => {
+        console.log(res)
+        this.tableData = res.data.results
+        this.total = res.data.count
+        this.totalNum1 = '总用户数量: ' + res.data.count
+      })
     },
     // 今日用户数获取事件
     getLists1() {
+      this.$http.get('/api/user_today_add/?page='+ this.currentPage + '&page_size=' + this.pageSize).then(res => {
+        console.log(res)
+        this.tableData1 = res.data.results
+        this.total1 = res.data.count
+        this.totalNum2 = '今日新增用户数量: ' + res.data.count
+      })
     },
     // tab栏点击事件
     handleClick(tab, event) {

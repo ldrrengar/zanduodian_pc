@@ -11,20 +11,20 @@
         <el-main class="el-box">
           <el-tabs v-model="activeName" @tab-click="handleClick" class="el-tabs-bg el-flex el-tabs-flex approveTabs">
             <el-tab-pane :label="totalNum1" name="first" class="el-card-flex">
-              <div class="el-flex el-box-column ">
-                <el-table :data="tableData" ref="tableData" style="width: 100%;" border stripe>
+              <div class="el-flex el-box-column " style="overflow: auto">
+                <el-table :data="tableData" ref="tableData" style="width: 100%; overflow: auto;" border stripe>
                   <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="任务编号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="视频链接"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="member_level_name" label="目标次数">
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.tasks_id" label="任务编号"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.url" label="视频链接"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="tasks_id.target_times" label="目标次数">
                   </el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="money" label="已完成次数"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="money" label="任务要求"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="center" label="发布任务价格"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="单条完成价格"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="费用总计"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="状态"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="任务类型"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="tasks_id.completed_times" label="已完成次数"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.tasks_name" label="任务要求"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="tasks_id.cost" label="发布任务价格"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="tasks_id.complete_cost" label="单条完成价格"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.total_cost" label="费用总计"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="tasks_id.state" label="状态 0：待审核 1：已驳回 2：已完成"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.type" label="任务类型 0.普通 1.会员"></el-table-column>
                 </el-table>
                 <!-- 分页表格 -->
                 <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage"
@@ -32,20 +32,20 @@
               </div>
             </el-tab-pane>
             <el-tab-pane :label="totalNum2" name="second" class="el-card-flex">
-              <div class="el-flex el-box-column">
-                <el-table :data="tableData1" ref="tableData1" style="width: 100%;" border stripe>
+              <div class="el-flex el-box-column" style="overflow: auto">
+                <el-table :data="tableData1" ref="tableData1" style="width: 100%; overflow: auto;" border stripe>
                   <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="任务编号"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="created" label="视频链接"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="member_level_name" label="目标次数">
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.tasks_id" label="任务编号"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.url" label="视频链接"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="tasks_id.target_times" label="目标次数">
                   </el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="money" label="已完成次数"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="money" label="任务要求"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="center" label="发布任务价格"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="time" label="单条完成价格"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="费用总计"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="time" label="状态"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time" label="任务类型"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="tasks_id.completed_times" label="已完成次数"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.tasks_name" label="任务要求"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="tasks_id.cost" label="发布任务价格"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="tasks_id.complete_cost" label="单条完成价格"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.total_cost" label="费用总计"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="tasks_id.state" label="状态 0：待审核 1：已驳回 2：已完成"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.type" label="任务类型 0.普通 1.会员"></el-table-column>
                 </el-table>
                 <!-- 分页表格 -->
                 <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage1"
@@ -114,15 +114,27 @@ export default {
   created() {
     this.getLists()
     this.getLists1()
-    this.totalNum1 = '总任务数量: ' + this.totalTask // 包括已完成
-    this.totalNum2 = '今日新增数量: ' + this.toDayTask // 包括已完成
+    // this.totalNum1 = '总任务数量: ' + this.totalTask // 包括已完成
+    // this.totalNum2 = '今日新增数量: ' + this.toDayTask // 包括已完成
   },
   methods: {
     // 总用户数获取事件
     getLists() {
+      this.$http.get('/api/task_look/?page='+ this.currentPage + '&page_size=' + this.pageSize+'&type=全部').then(res => {
+        console.log(res)
+        this.tableData = res.data.results
+        this.total = res.data.count
+        this.totalNum1 = '总任务数量: ' + res.data.count
+      })
     },
     // 今日用户数获取事件
     getLists1() {
+      this.$http.get('/api/task_look/?page='+ this.currentPage + '&page_size=' + this.pageSize+'&type=今日').then(res => {
+        console.log(res)
+        this.tableData1 = res.data.results
+        this.total1 = res.data.count
+        this.totalNum2 = '今日新增任务数量: ' + res.data.count
+      })
     },
     // tab栏点击事件
     handleClick(tab, event) {
