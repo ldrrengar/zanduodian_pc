@@ -127,7 +127,7 @@ export default {
     },
     // 今日用户数获取事件
     getLists1() {
-      this.$http.get('/api/user_today_add/?page='+ this.currentPage + '&page_size=' + this.pageSize).then(res => {
+      this.$http.get('/api/user_today_add/?page='+ this.currentPage1 + '&page_size=' + this.pageSize1).then(res => {
         console.log(res)
         this.tableData1 = res.data.results
         this.total1 = res.data.count

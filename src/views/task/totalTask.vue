@@ -129,7 +129,7 @@ export default {
     },
     // 今日用户数获取事件
     getLists1() {
-      this.$http.get('/api/task_look/?page='+ this.currentPage + '&page_size=' + this.pageSize+'&type=今日').then(res => {
+      this.$http.get('/api/task_look/?page='+ this.currentPage1 + '&page_size=' + this.pageSize1+'&type=今日').then(res => {
         console.log(res)
         this.tableData1 = res.data.results
         this.total1 = res.data.count
