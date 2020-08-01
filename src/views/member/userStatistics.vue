@@ -12,7 +12,7 @@
           <el-tabs v-model="activeName" @tab-click="handleClick" class="el-tabs-bg el-flex el-tabs-flex approveTabs">
             <el-tab-pane :label="totalNum1" name="first" class="el-card-flex">
               <div class="el-flex el-box-column " style="overflow: auto">
-                <el-table :data="tableData" ref="tableData" style="width: 100%;" border stripe>
+                <el-table :data="tableData" ref="tableData" style="width: 100%; overflow: auto;" border stripe>
                   <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="username" label="账号"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="name" label="昵称">
@@ -32,7 +32,7 @@
             </el-tab-pane>
             <el-tab-pane :label="totalNum2" name="second" class="el-card-flex">
               <div class="el-flex el-box-column ">
-                <el-table :data="tableData1" ref="tableData1" style="width: 100%;" border stripe>
+                <el-table :data="tableData1" ref="tableData1" style="width: 100%; overflow: auto;" border stripe>
                   <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="username" label="账号"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="name" label="昵称">

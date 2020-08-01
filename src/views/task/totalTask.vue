@@ -11,7 +11,7 @@
         <el-main class="el-box">
           <el-tabs v-model="activeName" @tab-click="handleClick" class="el-tabs-bg el-flex el-tabs-flex approveTabs">
             <el-tab-pane :label="totalNum1" name="first" class="el-card-flex">
-              <div class="el-flex el-box-column " style="overflow: auto">
+              <div class="el-flex el-box-column ">
                 <el-table :data="tableData" ref="tableData" style="width: 100%; overflow: auto;" border stripe>
                   <el-table-column show-overflow-tooltip align="center" type="index" width="50" label="序号"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.tasks_id" label="任务编号"></el-table-column>

@@ -140,7 +140,7 @@ export default {
       }
       // this.$refs.form.resetFields() // 清除表单数据
       this.dialogFormVisible = false // 关闭弹框
-      setTimeout(this.getList(), 2000)
+      setTimeout(this.getList(), 3000)
       // this.getList()
     },
     // 每页条数

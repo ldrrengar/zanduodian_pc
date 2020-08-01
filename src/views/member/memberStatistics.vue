@@ -21,8 +21,8 @@
 
                   <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="member_limit" label="会员期限"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="120" prop="task_reward" align="center" label="任务奖励"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="commission" prop="time" label="套餐提成"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="team_income" prop="time_type_name" label="团队收益"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="commission" label="套餐提成"></el-table-column>
+                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="team_income" label="团队收益"></el-table-column>
 <!--                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="今日收益"></el-table-column>-->
 <!--                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="time_type_name" label="提现"></el-table-column>-->
                   <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="balance" label="账户余额"></el-table-column>
