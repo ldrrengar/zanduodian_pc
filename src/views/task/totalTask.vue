@@ -44,8 +44,8 @@
                   <el-table-column show-overflow-tooltip sortable min-width="120" prop="state" align="tasks_id.cost" label="发布任务价格"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="120" align="center" prop="tasks_id.complete_cost" label="单条完成价格"></el-table-column>
                   <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.total_cost" label="费用总计"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="tasks_id.state" label="状态 0：待审核 1：已驳回 2：已完成"></el-table-column>
-                  <el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.type" label="任务类型 0.普通 1.会员"></el-table-column>
+                  <!--<el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="tasks_id.state" label="状态 0：待审核 1：已驳回 2：已完成"></el-table-column>-->
+                  <!--<el-table-column show-overflow-tooltip sortable min-width="100" align="center" prop="tasks_id.type" label="任务类型 0.普通 1.会员"></el-table-column>-->
                 </el-table>
                 <!-- 分页表格 -->
                 <el-pagination background layout="total, sizes, prev, pager, next, jumper" :current-page="currentPage1"

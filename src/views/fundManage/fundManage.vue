@@ -23,9 +23,9 @@
                   <div @click="nextPage(2, scope.row.name)" style="color: #0b82e9; cursor: pointer;">{{ scope.row.member }}</div>
                 </template>
               </el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="commission" label="套餐提成"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="task_reward" label="任务奖励"></el-table-column>
-              <el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="team_income" label="团队收益"></el-table-column>
+              <!--<el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="commission" label="套餐提成"></el-table-column>-->
+              <!--<el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="task_reward" label="任务奖励"></el-table-column>-->
+              <!--<el-table-column show-overflow-tooltip sortable min-width="80" align="center" prop="team_income" label="团队收益"></el-table-column>-->
               <el-table-column show-overflow-tooltip sortable min-width="120"  prop="momey_record" align="center" label="提现">
                 <template  slot-scope="scope">
                   <div @click="nextPage(3, scope.row.name)" style="color: #0b82e9; cursor: pointer;">{{ scope.row.momey_record }}</div>
